@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Hamja - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .cert-card {
+            transition: all 0.3s ease;
+        }
+        .cert-card:hover {
+            transform: translateY(-5px);
+        }
+        .cert-icon {
+            transition: all 0.3s ease;
+        }
+        .cert-card:hover .cert-icon {
+            transform: scale(1.1);
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: #2563EB;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm shadow-lg z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#" class="text-2xl font-bold text-blue-600">MH</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-blue-600 transition-colors">Beranda</a>
+                    <a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors">Tentang</a>
+                    <a href="#experience" class="text-gray-600 hover:text-blue-600 transition-colors">Pengalaman</a>
+                    <a href="#education" class="text-gray-600 hover:text-blue-600 transition-colors">Pendidikan</a>
+                    <a href="#skills" class="text-gray-600 hover:text-blue-600 transition-colors">Keahlian</a>
+                    <a href="#projects" class="text-gray-600 hover:text-blue-600 transition-colors">Proyek</a>
+                    <a href="#certifications" class="text-gray-600 hover:text-blue-600 transition-colors">Sertifikasi</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Kontak</a>
+                </div>
+                <button id="mobileMenuBtn" class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4">
+                <a href="#home" class="block py-2 text-gray-600 hover:text-blue-600">Beranda</a>
+                <a href="#about" class="block py-2 text-gray-600 hover:text-blue-600">Tentang</a>
+                <a href="#experience" class="block py-2 text-gray-600 hover:text-blue-600">Pengalaman</a>
+                <a href="#education" class="block py-2 text-gray-600 hover:text-blue-600">Pendidikan</a>
+                <a href="#skills" class="block py-2 text-gray-600 hover:text-blue-600">Keahlian</a>
+                <a href="#projects" class="block py-2 text-gray-600 hover:text-blue-600">Proyek</a>
+                <a href="#certifications" class="block py-2 text-gray-600 hover:text-blue-600">Sertifikasi</a>
+                <a href="#contact" class="block py-2 text-gray-600 hover:text-blue-600">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20 bg-gradient-to-b from-blue-50 to-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <img src="profile.png" alt="Muhammad Hamja" 
+                         class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover mx-auto shadow-xl border-4 border-white">
+                </div>
+                <div class="md:w-1/2 text-center md:text-left" data-aos="fade-left">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Muhammad Hamja</h1>
+                    <div class="text-xl md:text-2xl text-blue-600 mb-6">
+                        <span id="typed"></span>
+                    </div>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Mahasiswa semester 5 Teknologi Informasi dengan fokus pada pengembangan web dan analisis data.
+                        Saat ini bekerja sebagai Junior Data Analyst di PT. Jalin Pembayaran Nusantara.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="Muhammad Hamja_CV_ATS.pdf" download="Muhammad Hamja_CV_ATS.pdf" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-flex items-center justify-center">
+                            <i class="fas fa-download mr-2"></i>Download CV
+                        </a>
+                        <a href="#contact" class="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors inline-flex items-center justify-center">
+                            <i class="fas fa-envelope mr-2"></i>Hubungi Saya
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Tentang Saya</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6" data-aos="fade-right">
+                    <p class="text-gray-600 leading-relaxed">
+                        Saya adalah mahasiswa semester 5 Teknologi Informasi di Universitas Indra Prasta PGRI, dengan fokus kuat pada pengembangan web dan analisis data. Saat ini bekerja sebagai Junior Data Analyst, saya memiliki pengalaman praktis dalam Python, Flask, PostgreSQL, dan alat visualisasi data seperti Grafana.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Saya unggul dalam membangun aplikasi web yang efisien, mengelola database, dan memberikan wawasan yang dapat ditindaklanjuti melalui analisis data. Memiliki hasrat dalam memecahkan masalah kompleks, saya terus berusaha meningkatkan keahlian teknis sambil mendukung pengambilan keputusan bisnis yang tepat.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm">Web Development</span>
+                        <span class="px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm">Data Analysis</span>
+                        <span class="px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm">Problem Solving</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-6" data-aos="fade-left">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <i class="fas fa-code text-3xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Web Development</h3>
+                        <p class="text-gray-600">Pengembangan aplikasi web full-stack dengan fokus pada user experience</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <i class="fas fa-chart-line text-3xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Data Analysis</h3>
+                        <p class="text-gray-600">Analisis data untuk mendukung pengambilan keputusan bisnis</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <i class="fas fa-database text-3xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Database Management</h3>
+                        <p class="text-gray-600">Pengelolaan dan optimasi database untuk performa maksimal</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <i class="fas fa-brain text-3xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Problem Solving</h3>
+                        <p class="text-gray-600">Pemecahan masalah kompleks dengan solusi inovatif</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Pengalaman Kerja</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white rounded-xl shadow-lg p-8 mb-8" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold">Junior Web Developer</h3>
+                            <p class="text-blue-600">PT. Jalin Pembayaran Nusantara</p>
+                        </div>
+                        <p class="text-gray-600">Juni 2023 - Sekarang</p>
+                    </div>
+                    <p class="text-gray-600 mb-4">Tech stack: Grafana, MySQL, SQL, Python, Flask, Bootstrap, Matplotlib</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>Mengembangkan website internal perusahaan menggunakan Python Flask untuk frontend dan backend</li>
+                        <li>Merancang dan mengelola database dengan PostgreSQL</li>
+                        <li>Membantu dalam analisis data dan membuat visualisasi untuk mendukung pengambilan keputusan bisnis</li>
+                        <li>Mengembangkan proyek web scraping berbasis Python untuk mengumpulkan data eksternal yang relevan</li>
+                        <li>Memelihara dan mengoptimalkan kinerja database serta memastikan keamanan data</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold">Junior Data Analyst</h3>
+                            <p class="text-blue-600">PT. Jalin Pembayaran Nusantara</p>
+                        </div>
+                        <p class="text-gray-600">Juni 2023 - Sekarang</p>
+                    </div>
+                    <p class="text-gray-600 mb-4">Tech stack: Grafana, MySQL, SQL, Python, Flask, Bootstrap, Matplotlib</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>Membantu pengembangan dashboard menggunakan Grafana</li>
+                        <li>Mendukung pengumpulan data dan manipulasi data yang efektif</li>
+                        <li>Mengumpulkan, memproses, dan menganalisis data untuk memfasilitasi pengambilan keputusan bisnis</li>
+                        <li>Membuat representasi data visual yang akurat dan dapat diandalkan</li>
+                        <li>Berkolaborasi dengan anggota tim untuk meningkatkan proses analisis data</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Pendidikan</h2>
+            <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8" data-aos="fade-up">
+                <div class="flex flex-col md:flex-row justify-between items-start mb-4">
+                    <div>
+                        <h3 class="text-xl font-semibold">Universitas Indra Prasta PGRI</h3>
+                        <p class="text-blue-600">Sarjana Teknologi Informasi</p>
+                    </div>
+                    <p class="text-gray-600">Agustus 2022 - Sekarang</p>
+                </div>
+                <p class="text-gray-600 mb-4">Mata kuliah penting yang diambil:</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-600">
+                    <li>Web Programming</li>
+                    <li>Struktur Data</li>
+                    <li>Probabilitas dan Statistika</li>
+                    <li>Grafika Komputer</li>
+                    <li>Database</li>
+                    <li>Pengembangan Perangkat Lunak</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Keahlian Teknis</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Programming Languages -->
+                <div class="skill-card bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-code text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-lg font-semibold mb-2">Programming</h3>
+                        <div class="text-center text-gray-600">
+                            <p>Python</p>
+                            <p>JavaScript</p>
+                            <p>HTML/CSS</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Frameworks -->
+                <div class="skill-card bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-layer-group text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-lg font-semibold mb-2">Frameworks</h3>
+                        <div class="text-center text-gray-600">
+                            <p>Flask</p>
+                            <p>Bootstrap</p>
+                            <p>Tailwind</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="skill-card bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-database text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-lg font-semibold mb-2">Databases</h3>
+                        <div class="text-center text-gray-600">
+                            <p>PostgreSQL</p>
+                            <p>MySQL</p>
+                            <p>SQL</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="skill-card bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-tools text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-lg font-semibold mb-2">Tools</h3>
+                        <div class="text-center text-gray-600">
+                            <p>Grafana</p>
+                            <p>Matplotlib</p>
+                            <p>Git</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Language Skills -->
+            <div class="mt-12">
+                <h3 class="text-2xl font-bold text-center mb-8">Kemampuan Bahasa</h3>
+                <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h4 class="text-lg font-semibold mb-2">Bahasa Indonesia</h4>
+                        <p class="text-gray-600">Native</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h4 class="text-lg font-semibold mb-2">Bahasa Inggris</h4>
+                        <p class="text-gray-600">Professional Working Proficiency</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Proyek</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- MilkFruit Website -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg" data-aos="fade-up">
+                    <img src="milk.png" alt="MilkFruit Website" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">MilkFruit Website</h3>
+                        <p class="text-gray-600 mb-4">Website UMKM dengan integrasi WhatsApp untuk pemesanan langsung, memungkinkan pelanggan menelusuri produk buah dan melakukan pemesanan melalui WhatsApp.</p>
+                        <div class="space-y-2 mb-4">
+                            <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Tampilan Produk</p>
+                            <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Integrasi WhatsApp</p>
+                            <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Desain Responsif</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">HTML</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">CSS</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">JavaScript</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Tailwind</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Internal Website -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <img src="websiteinternal.png" alt="Internal Website" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Website Internal Perusahaan</h3>
+                        <p class="text-gray-600 mb-4">Pengembangan website internal menggunakan Python Flask untuk manajemen data dan proses internal perusahaan.</p>
+                        <div class="space-y-2 mb-4">
+                            <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Backend Development</p>
+                            <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Database Integration</p>
+                            <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>User Authentication</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Python</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Flask</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ATM Monitoring Dashboard -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <img src="grafana.png" alt="ATM Dashboard" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Dashboard Monitoring ATM</h3>
+                        <p class="text-gray-600 mb-4">Dashboard Grafana untuk monitoring kesehatan dan kinerja mesin ATM secara real-time.</p>
+                        <div class="space-y-2 mb-4">
+                            <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Real-time Monitoring</p>
+                            <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Data Visualization</p>
+                            <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Alert System</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Grafana</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">SQL</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Sertifikasi</h2>
+            <div class="space-y-8">
+                <!-- VSGA -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row justify-between items-start gap-6">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Vocational School Graduate Academy (2022) - Junior Web Developer</h3>
+                            <p class="text-gray-600 mb-2">Maret 2023</p>
+                            <p class="text-sm text-gray-500 mb-4">Credential ID: 1935604860-289/VSGA/BLDSM.Kominfo/2023</p>
+                            <div class="space-y-2">
+                                <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Frontend Development dengan HTML, CSS, dan JavaScript</p>
+                                <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Backend Development dengan Python dan Flask</p>
+                                <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Database Management dengan PostgreSQL</p>
+                            </div>
+                        </div>
+                        <img src="kominfo.png" alt="VSGA Certificate" class="w-32 h-32 object-cover rounded-lg shadow">
+                    </div>
+                </div>
+
+                <!-- SQL Bootcamp -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row justify-between items-start gap-6">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">The Complete SQL Bootcamp: Go from Zero to Hero</h3>
+                            <p class="text-gray-600 mb-2">Agustus 2023</p>
+                            <p class="text-sm text-gray-500 mb-4">Credential ID: UC-93e50caa-2a7a-4ab4-b458-960db57e080</p>
+                            <div class="space-y-2">
+                                <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>SQL Queries dan Data Manipulation</p>
+                                <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Data Aggregation dan Analysis</p>
+                                <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Database Design dan Relationships</p>
+                            </div>
+                        </div>
+                        <img src="udemy.png" alt="SQL Certificate" class="w-32 h-32 object-cover rounded-lg shadow">
+                    </div>
+                </div>
+
+                <!-- Python Bootcamp -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row justify-between items-start gap-6">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">100 Days of Code: The Complete Python Pro Bootcamp</h3>
+                            <p class="text-gray-600 mb-2">Agustus 2023</p>
+                            <p class="text-sm text-gray-500 mb-4">Credential ID: UC-4db54771-9870-4cf9-b50a-a8dlbe4e3eea</p>
+                            <div class="space-y-2">
+                                <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Object-Oriented Programming</p>
+                                <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Web Development dengan Flask dan Django</p>
+                                <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Data Science dan Automation</p>
+                            </div>
+                        </div>
+                        <img src="udemy.png" alt="Python Certificate" class="w-32 h-32 object-cover rounded-lg shadow">
+                    </div>
+                </div>
+
+                <!-- Python for Everyone -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row justify-between items-start gap-6">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Python for Everyone Master the Basics of Programming</h3>
+                            <p class="text-gray-600 mb-2">September 2024</p>
+                            <p class="text-sm text-gray-500 mb-4">Credential ID: UC-37822883c-cb74-446b-8faa-68d0678b519e</p>
+                            <div class="space-y-2">
+                                <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Core Python Concepts</p>
+                                <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Control Flow dan Operators</p>
+                                <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Problem-Solving Techniques</p>
+                            </div>
+                        </div>
+                        <img src="udemy.png" alt="Python Basics Certificate" class="w-32 h-32 object-cover rounded-lg shadow">
+                    </div>
+                </div>
+
+                <!-- AI Course -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row justify-between items-start gap-6">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Basic Artificial Intelligence (AI)</h3>
+                            <p class="text-gray-600 mb-2">September 2024 - September 2027</p>
+                            <p class="text-sm text-gray-500 mb-4">Credential ID: 93XW5W7N9PM3</p>
+                            <div class="space-y-2">
+                                <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Introduction to AI</p>
+                                <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Data for AI</p>
+                                <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Machine Learning Basics</p>
+                                <p class="text-gray-600"><i class="fas fa-check text-blue-600 mr-2"></i>Deep Learning Fundamentals</p>
+                            </div>
+                        </div>
+                        <img src="dicoding.png" alt="AI Certificate" class="w-32 h-32 object-cover rounded-lg shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Kontak</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-right">
+                    <h3 class="text-2xl font-semibold mb-6">Kirim Pesan</h3>
+                    <form class="space-y-6" id="contactForm">
+                        <div>
+                            <label class="block text-gray-700 mb-2">Nama Lengkap</label>
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Subjek</label>
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Pesan</label>
+                            <textarea class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                            Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-8" data-aos="fade-left">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-6">Informasi Kontak</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-blue-600 w-8"></i>
+                                <span>+628889275189</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-blue-600 w-8"></i>
+                                <span>muhammadhamja45@gmail.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-blue-600 w-8"></i>
+                                <span>Jakarta, Indonesia</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-6">Social Media</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/muhammad-hamja-72a651272/" 
+                               class="bg-blue-100 text-blue-600 p-3 rounded-full hover:bg-blue-200 transition-colors">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                            <a href="#" class="bg-blue-100 text-blue-600 p-3 rounded-full hover:bg-blue-200 transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="mailto:muhammadhamja45@gmail.com" 
+                               class="bg-blue-100 text-blue-600 p-3 rounded-full hover:bg-blue-200 transition-colors">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Muhammad Hamja</h4>
+                    <p class="text-gray-400">Web Developer & Data Analyst</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://www.linkedin.com/in/muhammad-hamja-72a651272/" class="hover:text-blue-400">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-blue-400">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                        <a href="mailto:muhammadhamja45@gmail.com" class="hover:text-blue-400">
+                            <i class="fas fa-envelope text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Beranda</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">Tentang</a></li>
+                        <li><a href="#experience" class="text-gray-400 hover:text-white">Pengalaman</a></li>
+                        <li><a href="#education" class="text-gray-400 hover:text-white">Pendidikan</a></li>
+                        <li><a href="#skills" class="text-gray-400 hover:text-white">Keahlian</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white">Proyek</a></li>
+                        <li><a href="#certifications" class="text-gray-400 hover:text-white">Sertifikasi</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Kontak</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone mr-2"></i>
+                            +628889275189
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i>
+                            muhammadhamja45@gmail.com
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            Jakarta, Indonesia
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 Muhammad Hamja. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden hover:bg-blue-700 transition-colors">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script>
+        // Inisialisasi AOS
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            once: true
+        });
+
+        // Typed.js untuk efek mengetik
+        new Typed('#typed', {
+            strings: ['Web Developer', 'Data Analyst'],
+            typeSpeed: 50,
+            backSpeed: 50,
+            loop: true,
+            backDelay: 2000
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Scroll to Top Button
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.remove('hidden');
+            } else {
+                scrollToTopBtn.classList.add('hidden');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Contact Form Handling
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Terima kasih! Pesan Anda telah terkirim.');
+            contactForm.reset();
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.querySelector('nav');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                navbar.classList.remove('shadow-lg');
+                return;
+            }
+
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                navbar.classList.add('-translate-y-full');
+            } else {
+                navbar.classList.remove('-translate-y-full');
+            }
+
+            navbar.classList.add('shadow-lg');
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
